@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(15, 15, 15, 1);
+  padding-top: 54px; 
+  font-family: 'Outfit', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(15, 15, 15, 1);
+  background: rgba(15, 15, 15, 1);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 30, 30, 1);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+#nav-bar {
+  vertical-align: middle;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(15, 15, 15, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+  position: fixed;
+  top: 0;
+  height: 54px;
+  z-index: 1000;
+  padding: 20
+  px 0;
+}
+
+#title {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  margin: 12px 12px;
+  font-family: "Momo Trust Sans", sans-serif; 
+  font-weight: 700;
+  user-select: none;
+}
+
+.red-txt {
+  color: red;
+}
+
+#nav-bar-btns {
+  margin: 12px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar-btn {
+  border-radius: 10px;
+  padding: 7px 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 10px;
+  background-color: red;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); 
+  transition: 0.25s;
+}
+
+.nav-bar-btn:hover {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.nav-bar-btn:active {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.current-nav-btn {
+  cursor: not-allowed;
+  opacity: 0.7;
+  background-color: #990000;
+}
+
+.current-nav-btn:hover,
+.current-nav-btn:active {
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  transform: scale(1);
+  opacity: 0.7;
+}
+
+.disabled-nav-btn {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: #555555;
+}
+
+.disabled-nav-btn:hover,
+.disabled-nav-btn:active {
+  box-shadow: none;
+  transform: scale(1);
+  opacity: 0.3;
+}
+
+#menu-toggle-btn {
+  background: none;
+  border: none;
+  padding: 4px 3px 0 3px;
+  display: none;
+  margin-right: 15px;
+  line-height: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 452px) {
+  .nav-bar-btn {
+      display: none;
+  }
+
+  #menu-toggle-btn {
+      display: block;
+  }
+  
+  #nav-bar-btns {
+      margin: 0; 
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      
+      position: absolute;
+      top: 54px; 
+      right: 0;
+      width: 100%; 
+      background-color: rgba(15, 15, 15, 0.95);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+  }
+  
+  #nav-bar-btns.menu-open {
+      display: flex;
+      opacity: 1;
+  }
+  
+  #nav-bar-btns.menu-open .nav-bar-btn {
+      display: block; 
+      width: 90%;
+      margin: 10px auto;
+      text-align: center;
+      margin-right: auto;
+      padding: 12px 10px;
+      font-size: 16px;
+  }
+
+  #desc-div h1 {
+    font-size: 30px;
+  }
+
+  #desc-div p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 230px) {
+  #title {
+      font-size: 15px;
+      text-align: center;
+  }
+
+  #desc-div h1 {
+    font-size: 20px;
+  }
+
+  #desc-div p {
+    font-size: 10px;
+  }
+}
+
+.member-card {
+  width: 400px;
+  border: 2px solid white;
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 30px 20px 30px;
+  margin-bottom: 20px;
+  text-align: left;
+  height: 350px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.member-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 35px;
+}
+
+.member-card p {
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .member-card {
+    width: 250px;
+    border: 2px solid white;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 30px 20px 30px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  .member-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+  }
+  
+  .member-card p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .member-card {
+    width: 200px;
+    border: 2px solid white;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 30px 20px 30px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  .member-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .member-card p {
+    font-size: 11px;
+  }
+}
