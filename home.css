@@ -125,7 +125,18 @@ button {
   box-shadow: none;
 }
 
-@media (max-width: 452px) {
+img[src="gc-pfp.png"] {
+  border-radius: 100%;
+  width: max-content;
+  height: 200px;
+  margin: 0 0 0 15px;
+  padding: 0;
+  float: right;
+  shape-outside: circle(50%);
+  shape-margin: 15px;
+}
+
+@media (max-width: 460px) {
   .nav-bar-btn {
       display: none;
   }
@@ -173,6 +184,38 @@ button {
   #desc-div p {
     font-size: 15px;
   }
+
+  img[src="gc-pfp.png"] {
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    margin: 0 0 0 15px;
+    padding: 0;
+    float: right;
+    shape-outside: circle(50%);
+    shape-margin: 15px;
+  }
+}
+
+@media (max-width: 355px) {
+  #desc-div #abt {
+    display: block;
+  }
+
+  .abt {
+    display: block;
+  }
+
+  img[src="gc-pfp.png"] {
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px auto;
+    padding: 0;
+    float: none;
+    shape-outside: none;
+    shape-margin: 0;
+  }
 }
 
 @media (max-width: 230px) {
@@ -190,10 +233,7 @@ button {
   }
 }
 
-/* Updated Responsive Member Card Styles */
-
 #member-cards {
-    /* Use flexbox to handle wrapping and centering */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -201,7 +241,6 @@ button {
 }
 
 .member-card {
-  /* Default: 3 cards per row on large screens */
   width: calc(33.33% - 20px); 
   min-width: 300px;
   border: 2px solid white;
@@ -223,7 +262,6 @@ button {
   font-size: 20px;
 }
 
-/* Tablet (2 cards per row) */
 @media (max-width: 1000px) {
   .member-card {
     width: calc(50% - 20px); 
@@ -241,7 +279,6 @@ button {
   }
 }
 
-/* Mobile (1 card per row) */
 @media (max-width: 650px) {
   .member-card {
     width: 90%; 
@@ -258,4 +295,19 @@ button {
   .member-card p {
     font-size: 15px;
   }
+}
+
+p::selection,
+h1::selection,
+h2::selection {
+  color: red;
+}
+
+span::selection {
+  color:rgba(255, 0, 0, 0.3);
+}
+
+br,
+img {
+  user-select: none;
 }
